@@ -48,27 +48,27 @@ having both low alkalinity and high levels of Dissolved Organic Carbon (DOC).</p
 <a id="what-do-i-need-to-run-thincarb" class="anchor" href="#what-do-i-need-to-run-thincarb" aria-hidden="true">
   <span aria-hidden="true" class="octicon octicon-link"></span></a>What do I need to run THINCARB?</h3>
 
-You can run THINCARB in one of two ways: as a macro embedded in a Microsoft 
+<p>You can run THINCARB in one of two ways: as a macro embedded in a Microsoft 
 Excel (Excel Version 14.0, 'Excel 2010') or later spreadsheet, or by using the 
-Python language (Versions 2.7.x and 3.x.x are supported).
+Python language (Versions 2.7.x and 3.x.x are supported).</p>
 
 <a id="what-input-data-does-thincarb-require" class="anchor" href="#what-input-data-does-thincarb-require" aria-hidden="true">
   <span aria-hidden="true" class="octicon octicon-link"></span></a>What input data does THINCARB require?</h3>
 
-The absolute minimum input data are the pH and Gran alkalinity of a water sample 
+<p>The absolute minimum input data are the pH and Gran alkalinity of a water sample 
 (in micro-equivalents/litre), though temperature (in degrees C) has a big effect 
 on the calculations, so if this is not known then an ‘educated guess’ will be 
 necessary! However, all three are usually routinely measured water quality 
-determinands.
+determinands.</p>
 
-Optional additional inputs, which can be used to refine the calculations if 
+<p>Optional additional inputs, which can be used to refine the calculations if 
 available, are the altitude (in metres) at which the water sample was taken and 
-the calcium ion concentration (in milligrams/litre).
+the calcium ion concentration (in milligrams/litre).</p>
 
 <a id="what-does-thincarb-calculate" class="anchor" href="#what-does-thincarb-calculate" aria-hidden="true">
   <span aria-hidden="true" class="octicon octicon-link"></span></a>What does THINCARB calculate?</h3>
 
-The full list of output values calculated is shown below.
+<p>The full list of output values calculated is shown below.</p>
 
 * Excess partial pressure of dissolved CO2 (EpCO2) {5 successive approximations}
 * CaCO3 saturation
@@ -109,10 +109,10 @@ The full list of output values calculated is shown below.
 <a id="how-does-thincarb-work" class="anchor" href="#how-does-thincarb-work" aria-hidden="true">
   <span aria-hidden="true" class="octicon octicon-link"></span></a>How does THINCARB work?</h3>
 
-For the physical chemistry behind the model the reader is referred to the 
-references [1],[2].
+<p>For the physical chemistry behind the model the reader is referred to the 
+references [1],[2].</p>
 
-The algorithmic approach of both the Excel and Python implementations of 
+<p>The algorithmic approach of both the Excel and Python implementations of 
 THINCARB is the same: an initial approximation for EpCO2 is gradually refined 
 (optimised) by minimising the overall charge balance in the system. In Excel 
 this optimisation is performed with the Goal Seek function. In Python a simple, 
@@ -120,55 +120,70 @@ but tenacious, bisection algorithm is used. The latter usually achieves a better
 residual charge balance, but both approaches will give essentially the same 
 outputs for the same residual charge balance. For this reason care must be 
 exercised if comparing results from the Excel implementation with results from 
-the Python implementation!
+the Python implementation!</p>
 
-*An interesting philosophical debate is whether a residual charge balance of, 
+<p><i>An interesting philosophical debate is whether a residual charge balance of, 
 say, 10^-9 e is actually physically more important or realistic than, say, a 
 residual charge balance of 10^-4 e. However, this difference is sufficient to 
 produce variations in EpCO2, [HCO3-], and the total [DIC] of almost 4%! So 
-beware!*
+beware!</i></p>
 
 <a id="speed" class="anchor" href="#speed" aria-hidden="true">
   <span aria-hidden="true" class="octicon octicon-link"></span></a>Speed</h3>
 
-How quickly THINCARB processes datasets depends on several factors: the 
+<p>How quickly THINCARB processes datasets depends on several factors: the 
 specification of the computer, the acceptable residual charge balance, how 
 close to that acceptable residual charge balance the initial estimate of EpCO2 
 puts the starting charge balance, and the efficiency of the optimisation 
-algorithm.
+algorithm.</p>
 
-The Python implementation has been coded with human-readability (not speed) in 
+<p>The Python implementation has been coded with human-readability (not speed) in 
 mind, and the bisection algorithm is very robust but not particularly fast. 
 Consequently there is undoubtedly scope for future speed improvements if needed. 
 But as a guide, during real use of THINCARB on a harmonised dataset, the Python 
 2.7 implementation processed 8300 readings from file in 88 mins (ie, roughly 
 1.5/sec) on an Intel quad-core 3.2 GHz CPU based PC with 12 GB RAM running 
-Python from a Windows 7 command line interface.
+Python from a Windows 7 command line interface.</p>
 
 <font size="2">
-<a id="references" class="anchor" href="#references" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a><b>References</b>
+<a id="references" class="anchor" href="#references" aria-hidden="true">
+  <span aria-hidden="true" class="octicon octicon-link"></span></a><b>References</b>
 
-<p>[1] ‘An assessment of excess carbon dioxide partial pressures in natural waters based on pH and alkalinity measurements’. Colin Neal, W Alan House, Kevin Down. The Science of the Total Environment. 210/211 (1998) 173-185.</p>
+<p>[1] ‘An assessment of excess carbon dioxide partial pressures in natural waters 
+based on pH and alkalinity measurements’. Colin Neal, W Alan House, Kevin Down. 
+The Science of the Total Environment. 210/211 (1998) 173-185.</p>
 
-<p>[2] ‘Inorganic Carbon Dominates Dissolved Carbon Concentrations and Fluxes in British Rivers: Application of the THINCARB Model - Thermodynamics of Inorganic Carbon’. Helen Jarvie, Stephen King, Colin Neal. <i>Manuscript in preparation</i>.</p>
+<p>[2] ‘Inorganic Carbon Dominates Dissolved Carbon Concentrations and Fluxes in 
+British Rivers: Application of the THINCARB Model - Thermodynamics of Inorganic 
+Carbon’. Helen Jarvie, Stephen King, Colin Neal. <i>Manuscript in preparation</i>.</p>
 
-<a id="acknowledgements" class="anchor" href="#acknowledgements" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a><b>Acknowledging THINCARB</b>
+<a id="acknowledgements" class="anchor" href="#acknowledgements" aria-hidden="true">
+  <span aria-hidden="true" class="octicon octicon-link"></span></a><b>Acknowledging THINCARB</b>
 
-<p>If you use THINCARB in your work please acknowledge as much in your publications/presentations! For example:</p>
+<p>If you use THINCARB in your work please acknowledge as much in your publications/
+presentations! For example:</p>
 
-<p><i>This work benefitted from THINCARB, software developed by the NERC Centre for Ecology & Hydrology and the STFC. See http://smk78.github.io/thincarb/</i></p>
+<p><i>This work benefitted from THINCARB, software developed by the NERC Centre for 
+Ecology & Hydrology and the STFC. See http://smk78.github.io/thincarb/</i></p>
 
-<a id="legal" class="anchor" href="#legal" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a><b>Legal Stuff</b>
+<a id="legal" class="anchor" href="#legal" aria-hidden="true"><span aria-hidden="true" 
+class="octicon octicon-link"></span></a><b>Legal Stuff</b>
 
-<p>THINCARB has been developed to be used, and perhaps even enhanced, by the water quality community, be they academic, government, or commercial. For that reason it has been given a permissive licence. Basically the only thing you are prevented from doing with THINCARB is selling it!</p>
+<p>THINCARB has been developed to be used, and perhaps even enhanced, by the water 
+quality community, be they academic, government, or commercial. For that reason it has 
+been given a permissive licence. Basically the only thing you are prevented from doing 
+with THINCARB is selling it!</p>
 
 <p>Please see the file LICENSE.txt for more details.</p>
 </font>
 
       <footer class="site-footer">
-        <span class="site-footer-owner"><a href="https://github.com/smk78/thincarb">THINCARB</a> is maintained by <a href="https://github.com/smk78">smk78</a>.</span>
+        <span class="site-footer-owner"><a href="https://github.com/smk78/thincarb">
+          THINCARB</a> is maintained by <a href="https://github.com/smk78">smk78</a>.</span>
 
-        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">
+          GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">
+            Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
       </footer>
 
     </section>

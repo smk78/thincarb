@@ -1,4 +1,4 @@
-# thincarb
+# THINCARB
 
 What is THINCARB?
 

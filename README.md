@@ -52,14 +52,14 @@ The full list of output values calculated is shown below.
 * Excess partial pressure of dissolved CO2 (EpCO2) {5 successive approximations}
 * CaCO3 saturation
 * Equilibrium constants for:
-  *Formation of H2CO3 from CO2 (k0)
-  *Dissociation of H2CO3 (k1)
-  *Dissociation of HCO3- (k2)
-  *Formation of CaHCO3+ (k3)
-  *Formation of CaCO3 (k4)
-  *Formation of CaOH+ (k5)
-  *Formation of H2O (k6)
-  *Dissolution of solid CaCO3 (k7)
+  * Formation of H2CO3 from CO2 (k0)
+  * Dissociation of H2CO3 (k1)
+  * Dissociation of HCO3- (k2)
+  * Formation of CaHCO3+ (k3)
+  * Formation of CaCO3 (k4)
+  * Formation of CaOH+ (k5)
+  * Formation of H2O (k6)
+  * Dissolution of solid CaCO3 (k7)
 * Chemical activities of:
   * OH-
   * H2CO3

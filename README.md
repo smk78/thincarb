@@ -61,26 +61,26 @@ The full list of output values calculated is shown below.
   *Formation of H2O (k6)
   *Dissolution of solid CaCO3 (k7)
 * Chemical activities of:
-  *OH-
-  *H2CO3
-  *HCO3-
-  *CO32-
-  *Ca2+
-  *CaHCO3+
-  *CaCO3
-  *CaOH+
+  * OH-
+  * H2CO3
+  * HCO3-
+  * CO32-
+  * Ca2+
+  * CaHCO3+
+  * CaCO3
+  * CaOH+
 * Concentrations of:
-  *Total Ca
-  *HCO3-
-  *CO32-
-  *H2CO3
-  *C in HCO3-
-  *C in CO32-
-  *C in H2CO3
-  *Total DIC
-  *DIC as HCO3
-  *DIC as CO3
-  *DIC as H2CO3
+  * Total Ca
+  * HCO3-
+  * CO32-
+  * H2CO3
+  * C in HCO3-
+  * C in CO32-
+  * C in H2CO3
+  * Total DIC
+  * DIC as HCO3
+  * DIC as CO3
+  * DIC as H2CO3
 * Ionic strength
 * Monovalent activity coefficient
 * Divalent activity coefficient

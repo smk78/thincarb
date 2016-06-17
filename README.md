@@ -3,10 +3,10 @@
 ##What is THINCARB?
 
 THINCARB stands for THermodynamics of INorganic CARBon and is a computational 
-model for estimating the excess partial pressure of CO2, and the equilibrium 
-constants, activities, concentrations, and fractionation, of the hydroxyl and 
-principal carbon-containing ions present in natural waters (ie, rivers and 
-lakes) from basic water quality determinands.
+model for estimating the excess partial pressure of CO2 (EpCO2), and the 
+equilibrium constants, activities, concentrations, and fractionation, of the 
+hydroxyl and principal carbon-containing ions present in natural waters (ie, 
+rivers and lakes) from basic water quality determinands.
 
 THINCARB is not suitable for marine environments.
 
@@ -52,35 +52,35 @@ The full list of output values calculated is shown below.
 Excess partial pressure of dissolved CO2 (EpCO2) {5 successive approximations}
 CaCO3 saturation
 Equilibrium constants for:
-..*Formation of H2CO3 from CO2 (k0)
-..*Dissociation of H2CO3 (k1)
-..*Dissociation of HCO3- (k2)
-..*Formation of CaHCO3+ (k3)
-..*Formation of CaCO3 (k4)
-..*Formation of CaOH+ (k5)
-..*Formation of H2O (k6)
-..*Dissolution of solid CaCO3 (k7)
+  *Formation of H2CO3 from CO2 (k0)
+  *Dissociation of H2CO3 (k1)
+  *Dissociation of HCO3- (k2)
+  *Formation of CaHCO3+ (k3)
+  *Formation of CaCO3 (k4)
+  *Formation of CaOH+ (k5)
+  *Formation of H2O (k6)
+  *Dissolution of solid CaCO3 (k7)
 Chemical activities of:
-..*OH-
-..*H2CO3
-..*HCO3-
-..*CO32-
-..*Ca2+
-..*CaHCO3+
-..*CaCO3
-..*CaOH+
+  *OH-
+  *H2CO3
+  *HCO3-
+  *CO32-
+  *Ca2+
+  *CaHCO3+
+  *CaCO3
+  *CaOH+
 Concentrations of:
-..*Total Ca
-..*HCO3-
-..*CO32-
-..*H2CO3
-..*C in HCO3-
-..*C in CO32-
-..*C in H2CO3
-..*Total DIC
-..*DIC as HCO3
-..*DIC as CO3
-..*DIC as H2CO3
+  *Total Ca
+  *HCO3-
+  *CO32-
+  *H2CO3
+  *C in HCO3-
+  *C in CO32-
+  *C in H2CO3
+  *Total DIC
+  *DIC as HCO3
+  *DIC as CO3
+  *DIC as H2CO3
 Ionic strength
 Monovalent activity coefficient
 Divalent activity coefficient

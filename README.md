@@ -49,9 +49,9 @@ the calcium ion concentration (in milligrams/litre).
 
 The full list of output values calculated is shown below.
 
-Excess partial pressure of dissolved CO2 (EpCO2) {5 successive approximations}
-CaCO3 saturation
-Equilibrium constants for:
+* Excess partial pressure of dissolved CO2 (EpCO2) {5 successive approximations}
+* CaCO3 saturation
+* Equilibrium constants for:
   *Formation of H2CO3 from CO2 (k0)
   *Dissociation of H2CO3 (k1)
   *Dissociation of HCO3- (k2)
@@ -60,7 +60,7 @@ Equilibrium constants for:
   *Formation of CaOH+ (k5)
   *Formation of H2O (k6)
   *Dissolution of solid CaCO3 (k7)
-Chemical activities of:
+* Chemical activities of:
   *OH-
   *H2CO3
   *HCO3-
@@ -69,7 +69,7 @@ Chemical activities of:
   *CaHCO3+
   *CaCO3
   *CaOH+
-Concentrations of:
+* Concentrations of:
   *Total Ca
   *HCO3-
   *CO32-
@@ -81,9 +81,9 @@ Concentrations of:
   *DIC as HCO3
   *DIC as CO3
   *DIC as H2CO3
-Ionic strength
-Monovalent activity coefficient
-Divalent activity coefficient
+* Ionic strength
+* Monovalent activity coefficient
+* Divalent activity coefficient
 
 
 ##How does THINCARB work?

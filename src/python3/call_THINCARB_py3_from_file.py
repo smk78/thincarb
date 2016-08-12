@@ -16,7 +16,7 @@
 import time
 
 # File containing the observations/readings
-InputFilename="THINCARB_model_table5_test_data.txt"
+InputFilename="THINCARB_model_test_data.txt"
 
 # File to contain the model calculations
 OutputFilename="THINCARB_model_results_from_calculation_FILE.txt"
@@ -37,7 +37,7 @@ from THINCARB_py3_math import MainRoutineMath
 
 # Create the output file and write the column headings
 fileout=open(OutputFilename,'w')
-fileout.write('Site Date Time Alt_(m) pH Alk_(uEq/L) Temp_(degC) [Ca]_(mg/L) EpCO2_rough EpCO2_less_rough EpCO2_less_rough_incl_CO3 EpCO2_accurate EpCO2_accurate_corr_alt Charge_balance Total_[Ca]_(M/L) CaCO3_sat_(Log) k0_pCO2-H2CO3 k1_H2CO3-HCO3 k2_HCO3-CO3 k3_CaHCO3 k4_CaCO3(0) k5_Ca(OH) k6_H2O k7_CaCO3(SO) OH H2CO3 HCO3 CO3 Ca2+ CaHCO3 CaCO3 CaOH root(I) gamma1 gamma2 [HCO3-]_mM [CO32-]_mM [H2CO3]_mM [HCO3-]_mg/L [CO32-]_mg/L [H2CO3]_mg/L [C]_in_HCO3_mg/L [C]_in_CO3_mg/L [C]_in_H2CO3_mg/L Tot_DIC_mg/L DIC_HCO3_% DIC_CO3_% DIC_H2CO3_% Tot_DIC_%'+'\n')
+fileout.write('Site Date Time Alt_(m) pH Alk_(uEq/L) Temp_(degC) [Ca]_(mg/L) EpCO2_rough EpCO2_less_rough EpCO2_less_rough_incl_CO3 EpCO2_accurate EpCO2_accurate_corr_alt Charge_balance Total_[Ca]_(M/L) CaCO3_sat_(Log) k0_pCO2-H2CO3 k1_H2CO3-HCO3 k2_HCO3-CO3 k3_CaHCO3 k4_CaCO3(0) k5_CaOH+ k6_H2O k7_CaCO3(SO) OH H2CO3 HCO3 CO3 Ca2+ CaHCO3 CaCO3 CaOH+ root(I) gamma1 gamma2 [HCO3-]_mM [CO32-]_mM [H2CO3]_mM [CaHCO3+]_mM [CaCO3]_mM [HCO3-]_mg/L [CO32-]_mg/L [H2CO3]_mg/L [CaHCO3+]_mg/L [CaCO3]_mg/L [C]_in_HCO3-_mg/L [C]_in_[CO32-]_mg/L [C]_in_H2CO3_mg/L [C]_in_CaHCO3_mg/L [C]_in_CaCO3_mg/L Tot_DIC_mg/L DIC_HCO3_% DIC_CO3_% DIC_H2CO3_% DIC_CaHCO3_% DIC_CaCO3_% Tot_DIC_%'+'\n')
 
 numrows=0
 # Open the input file
@@ -60,21 +60,23 @@ for linein in filein:
 #    G = [Ca] (mg/L)
 # Modify the variables on the LHS of the following statements to match the file contents (column ordering)
 # Add or remove these statements as necessary
+# SITE, A & B are text fields and do not need to be floated. Everything else does!
 # NB: Beware! Python lists index at [0] and not [1]!
 	SITE=columns[0]
 	A=columns[1]
 	B=columns[2]
-	D=float(columns[3])
-	E=float(columns[4])
-	F=float(columns[5])
-# And then insert any defaults for missing values; NB: use floating point numbers not integers!
-	C=0.0
-	G=0.0
+	C=float(columns[3])
+	D=float(columns[4])
+	E=float(columns[5])
+	F=float(columns[6])
+	G=float(columns[7])
+# And then insert any defaults for missing values SITE - G not in the lines above; NB: use floating point numbers not integers!
+#	G=0.0
 #### END OF COLUMN MATCHING ####
 
 
 #### DO NOT CHANGE ANYTHING BELOW HERE ####
-# Whatever happens MainRoutine must be called with values for fileout, targetvalue, tolerance, A, B, C, D, E, F and G!
+# Whatever happens MainRoutineMath must be called with values for fileout, targetvalue, tolerance, A, B, C, D, E, F and G!
 	MainRoutineMath(fileout,targetvalue,tolerance,SITE,A,B,C,D,E,F,G)
 	numrows=numrows+1
 # Report progress along the way! (% is the Python modulo operator)

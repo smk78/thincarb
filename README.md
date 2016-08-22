@@ -142,7 +142,7 @@ If you use THINCARB in your work please acknowledge as much in your publications
 /presentations! For example:
 
 *This work benefitted from THINCARB, software developed by the NERC Centre for 
-Ecology & Hydrology and the STFC. See http://smk78.github.io/thincarb/. [![DOI](https://zenodo.org/badge/doi/10.5281/zenodo.60649.svg)](http://dx.doi.org/10.5281/zenodo.60649)*
+Ecology & Hydrology and the STFC. See http://smk78.github.io/thincarb/.*
 
 
 ##Legal Stuff

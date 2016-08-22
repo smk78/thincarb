@@ -36,7 +36,7 @@ Python language (Versions 2.7.x and 3.x.x are supported).
 
 The absolute minimum input data are the pH and Gran alkalinity of a water sample 
 (in micro-equivalents/litre), though temperature (in degrees C) has a big effect 
-on the calculations, so if this is not known then an ‘educated guess’ will be 
+on the calculations, so if this is not known then an â€˜educated guessâ€™ will be 
 necessary! However, all three are usually routinely measured water quality 
 determinands.
 
@@ -142,7 +142,7 @@ If you use THINCARB in your work please acknowledge as much in your publications
 /presentations! For example:
 
 *This work benefitted from THINCARB, software developed by the NERC Centre for 
-Ecology & Hydrology and the STFC. See http://smk78.github.io/thincarb/*
+Ecology & Hydrology and the STFC. See http://smk78.github.io/thincarb/. [![DOI](https://zenodo.org/badge/doi/10.5281/zenodo.60649.svg)](http://dx.doi.org/10.5281/zenodo.60649)*
 
 
 ##Legal Stuff

@@ -134,7 +134,7 @@ based on pH and alkalinity measurements'. Colin Neal, W Alan House, Kevin Down.
 [2] 'Inorganic Carbon Dominates Total Dissolved Carbon Concentrations and Fluxes 
 in British Rivers: Application of the THINCARB Model - Thermodynamics of Inorganic 
 Carbon'. Helen Jarvie, Stephen King, Colin Neal. *The Science of the Total 
-Environment*. (2016) *in press*. [10.1016/j.scitotenv.2016.08.201](http://dx.doi.org/10.1016/j.scitotenv.2016.08.201)
+Environment*. 575 (2016) 496-512. [10.1016/j.scitotenv.2016.08.201](http://dx.doi.org/10.1016/j.scitotenv.2016.08.201)
 
 
 ##Acknowledging THINCARB

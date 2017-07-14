@@ -1,0 +1,7 @@
+RELEASE NOTES
+
+14-Jul-2017: Versions of THINCARB-excel2010.xlsm **prior** to v8 (see the bottom right corner of the grey text box to check), and 
+versions of THINCARB_py27_math.py / THINCARB_py3_math.py prior to this date, were computing an altitude-compensated EpCO2 value 
+(column/variable L) but not actually implementing it in the calculation of the H2CO3 activity (column/variable Y). This is now fixed. 
+Since the impact of altitude on EpCO2 is small anyway, the impact of this change on H2CO3 activity (and derived parameters) varies 
+from negligible to tiny.

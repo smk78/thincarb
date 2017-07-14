@@ -1,6 +1,6 @@
 # THINCARB_py27_math.py
 #
-# (c)2015 S. King, H Jarvie & C Neal
+# (c)2015 S. King, H Jarvie & C Neal (Sci. Tot. Env. 575 (2017) 496-512)
 #
 # Calculates CO2 & CO3 saturation indices, CO2 partial pressures, and total dissolved inorganic carbon
 # concentrations from hydrochemical data
@@ -10,6 +10,8 @@
 # This version of THINCARB replaces the Python '**' operator for exponentiation & square root with math.pow() & math.sqrt()
 #
 # This version of THINCARB includes the DIC contribution from CaHCO3+ and CaCO3
+#
+# 14-Jul-2017: Altitude-corrected EpCO2 now properly applied to calculation of H2CO3 activity
 
 import math
 
@@ -122,8 +124,12 @@ def MainRoutineMath(fileout,targetvalue,tolerance,SITE,A,B,C,D,E,F,G):
 	while ((M>(targetvalue+tolerance)) or (M<(targetvalue-tolerance))):
 		deltaK=(targetvalue+K)/2.0
 
+# Correct K for altitude (Note: this is a correction of the original correction in Neal 1998 from xPs/P0 to xP0/Ps)
+		L =K*math.pow(((288.0-0.0065*C)/288.0),-5.256)
+
 # The following hydrochemical estimates are dependent on K
-		Y =P*math.pow(10.0,-3.5)*K
+#		Y =P*math.pow(10.0,-3.5)*K
+		Y =P*math.pow(10.0,-3.5)*L
 		Z =Q*Y/math.pow(10.0,-D)
 		AA=R*Z/math.pow(10.0,-D)
 		AF=math.sqrt(((20.0/35450.0)+X+Z+math.pow(10.0,-D)+(4.0*(AA+N)))/2.0)
@@ -181,7 +187,7 @@ def MainRoutineMath(fileout,targetvalue,tolerance,SITE,A,B,C,D,E,F,G):
 		K=K-deltaK
 
 # Correct K for altitude (Note: this is a correction of the original correction in Neal 1998 from xPs/P0 to xP0/Ps)
-	L =K*math.pow(((288.0-0.0065*C)/288.0),-5.256)
+#	L =K*math.pow(((288.0-0.0065*C)/288.0),-5.256)
 
 # Output the original input data AND the computed hydrochemical estimates to the terminal
 #	print SITE,A,B,'%.1f'%C,'%.1f'%D,'%.1f'%E,'%.1f'%F,'%.2f'%G,'%.3f'%H,'%.3f'%I,'%.3f'%J,'%.3f'%K,'%.3f'%L,'%.1e'%M,'%.3e'%N, \

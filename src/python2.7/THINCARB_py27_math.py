@@ -12,6 +12,8 @@
 # This version of THINCARB includes the DIC contribution from CaHCO3+ and CaCO3
 #
 # 14-Jul-2017: Altitude-corrected EpCO2 now properly applied to calculation of H2CO3 activity
+#
+# 13-Mar-2018: Trap AX=0 by catching ever decreasing M when alkalinity is near zero
 
 import math
 
@@ -88,6 +90,7 @@ def MainRoutineMath(fileout,targetvalue,tolerance,SITE,A,B,C,D,E,F,G):
 
 # Initialising value for M
 	M=1000.0
+	lastM=999.0
 
 # The following hydrochemical estimates are dependent only on the given inputs
 	H =(E+math.pow(10.0,(6.0-D)))*math.pow(10.0,(6.0-D))/5.25
@@ -121,7 +124,9 @@ def MainRoutineMath(fileout,targetvalue,tolerance,SITE,A,B,C,D,E,F,G):
 # Uses a simple brute-force bisection algorithm which changes K by deltaK on each iteration
 # NB: This can become unreliable if tolerance is set too small - say <1.0E-08 - but it is unlikely that M would ever need to be 
 # determined with that precision!
-	while ((M>(targetvalue+tolerance)) or (M<(targetvalue-tolerance))):
+
+#	while ((M>(targetvalue+tolerance)) or (M<(targetvalue-tolerance))):
+	while (((M>(targetvalue+tolerance)) or (M<(targetvalue-tolerance))) and (M!=lastM)):
 		deltaK=(targetvalue+K)/2.0
 
 # Correct K for altitude (Note: this is a correction of the original correction in Neal 1998 from xPs/P0 to xP0/Ps)
@@ -169,6 +174,7 @@ def MainRoutineMath(fileout,targetvalue,tolerance,SITE,A,B,C,D,E,F,G):
 		else:
 			O=math.log10(AA*AB)-math.log10(W)
 
+		lastM=M
 		M =(E*math.pow(10.0,-6.0))+(math.pow(10.0,-D)/AG)-(Z/AG)-(2.0*AA/AH)-(AC/AG)-(2.0*AD/1.0)-(X/AG)-(AE/AG)
 
 # Decide which way to adjust K and set a flag to remember it
@@ -185,9 +191,6 @@ def MainRoutineMath(fileout,targetvalue,tolerance,SITE,A,B,C,D,E,F,G):
 		K=K+deltaK
 	else:
 		K=K-deltaK
-
-# Correct K for altitude (Note: this is a correction of the original correction in Neal 1998 from xPs/P0 to xP0/Ps)
-#	L =K*math.pow(((288.0-0.0065*C)/288.0),-5.256)
 
 # Output the original input data AND the computed hydrochemical estimates to the terminal
 #	print SITE,A,B,'%.1f'%C,'%.1f'%D,'%.1f'%E,'%.1f'%F,'%.2f'%G,'%.3f'%H,'%.3f'%I,'%.3f'%J,'%.3f'%K,'%.3f'%L,'%.1e'%M,'%.3e'%N, \

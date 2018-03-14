@@ -1,5 +1,9 @@
 RELEASE NOTES
 
+13-Mar-2018: A bug, which caused the bisection optimiser to misbehave, manifested itself when processing data with very small 
+alkalinities (<1 uEq/L). The result was that the charge balance would decrease well below the tolerance and lead to division by 
+zero errors. This has now been trapped. We have verified that the fix does not impact any of the outputs of the model.
+
 14-Jul-2017: Versions of THINCARB-excel2010.xlsm **prior** to v8 (see the bottom right corner of the grey text box to check), and 
 versions of THINCARB_py27_math.py / THINCARB_py3_math.py prior to this date, were computing an altitude-compensated EpCO2 value 
 (column/variable L) but not actually implementing it in the calculation of the H2CO3 activity (column/variable Y). This is now fixed. 

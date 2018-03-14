@@ -62,6 +62,8 @@ REFERENCES
 
 RELEASE NOTES
 
+13-Mar-2018: Prior versions of THINCARB_py3_math.py contained a bug which caused the bisection optimiser to misbehave. This has now been trapped. The fix does not impact any of the outputs of the model.
+
 14-Jul-2017: Prior versions of THINCARB_py3_math.py were computing an altitude-compensated EpCO2 value (L) but not actually implementing it in the calculation of the H2CO3 activity (Y). This is now fixed.
 
 

@@ -14,9 +14,6 @@
 # 14-Jul-2017: Altitude-corrected EpCO2 now properly applied to calculation of H2CO3 activity
 #
 # 13-Mar-2018: Trap AX=0 by catching ever decreasing M when alkalinity is near zero
-#
-# 25-Jan-2021: Increase precision on temperature output to 2 d.p.
-
 
 import math
 
@@ -196,7 +193,7 @@ def MainRoutineMath(fileout,targetvalue,tolerance,SITE,A,B,C,D,E,F,G):
 		K=K-deltaK
 
 # Output the original input data AND the computed hydrochemical estimates to the terminal
-#	print SITE,A,B,'%.1f'%C,'%.1f'%D,'%.1f'%E,'%.2f'%F,'%.2f'%G,'%.3f'%H,'%.3f'%I,'%.3f'%J,'%.3f'%K,'%.3f'%L,'%.1e'%M,'%.3e'%N, \
+#	print SITE,A,B,'%.1f'%C,'%.1f'%D,'%.1f'%E,'%.1f'%F,'%.2f'%G,'%.3f'%H,'%.3f'%I,'%.3f'%J,'%.3f'%K,'%.3f'%L,'%.1e'%M,'%.3e'%N, \
 #    '%.3f'%O,'%.3e'%P,'%.3e'%Q,'%.3e'%R,'%.3e'%S,'%.3e'%T,'%.3e'%U,'%.3e'%V,'%.3e'%W,'%.3e'%X,'%.3e'%Y,'%.3e'%Z,'%.3e'%AA, \
 #    '%.3e'%AB,'%.3e'%AC,'%.3e'%AD,'%.2e'%AE,'%.2e'%AF,'%.3f'%AG,'%.3f'%AH,'%.2f'%AI,'%.2f'%AJ,'%.2f'%AK,'%.2f'%AL,'%.2f'%AM, \
 #    '%.2f'%AN,'%.2f'%AO,'%.2f'%AP,'%.2f'%AQ,'%.2f'%AR,'%.2f'%AS,'%.2f'%AT,'%.2f'%AU,'%.2f'%AV,'%.2f'%AW,'%.2f'%AX,'%.1f'%AY, \
@@ -204,7 +201,7 @@ def MainRoutineMath(fileout,targetvalue,tolerance,SITE,A,B,C,D,E,F,G):
 #	print ' '
 
 # Output the original input data AND the computed hydrochemical estimates to a file
-	fileout.write(str(SITE)+' '+str(A)+' '+str(B)+' '+str('%.1f'%C)+' '+str('%.2f'%D)+' '+str('%.2f'%E)+' '+str('%.2f'%F)+' '+str('%.2f'%G)+' '+ \
+	fileout.write(str(SITE)+' '+str(A)+' '+str(B)+' '+str('%.1f'%C)+' '+str('%.2f'%D)+' '+str('%.2f'%E)+' '+str('%.1f'%F)+' '+str('%.2f'%G)+' '+ \
     str('%.3f'%H)+' '+str('%.3f'%I)+' '+str('%.3f'%J)+' '+str('%.3f'%K)+' '+str('%.3f'%L)+' '+str('%.1e'%M)+' '+str('%.3e'%N)+' '+ \
     str('%.3f'%O)+' '+str('%.3e'%P)+' '+str('%.3e'%Q)+' '+str('%.3e'%R)+' '+str('%.3e'%S)+' '+str('%.3e'%T)+' '+str('%.3e'%U)+' '+ \
     str('%.3e'%V)+' '+str('%.3e'%W)+' '+str('%.3e'%X)+' '+str('%.3e'%Y)+' '+str('%.3e'%Z)+' '+str('%.3e'%AA)+' '+str('%.3e'%AB)+' '+ \

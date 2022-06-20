@@ -14,6 +14,9 @@
 # 14-Jul-2017: Altitude-corrected EpCO2 now properly applied to calculation of H2CO3 activity
 #
 # 13-Mar-2018: Trap AX=0 by catching ever decreasing M when alkalinity is near zero
+#
+# 25-Jan-2021: Increase precision on temperature output to 2 d.p.
+
 
 import math
 
